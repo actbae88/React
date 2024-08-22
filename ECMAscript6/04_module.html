@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>module 하나의 파트. 부분.</title>
+</head>
+<body>
+
+    <!-- js에서 다른 js파일을 가져오는 문법 [아직 일반 web에서는 바로동작하지않음 애석함.] -->
+    <!-- 애석하게 서버에서만 가능 -->
+    <script type="module" >
+        import show from './module_aaa.js'
+        import {output, num} from './module_aaa.js'
+        // 디폴트만 그냥받을쑤있고 디폴트아닌건 구조분할할당{}으로받아야함!!
+        import {age as gg} from './module_aaa.js'
+
+        show()
+
+        output("sam")
+        output("robin")
+        alert(num+","+gg)
+        
+    </script>
+</body>
+</html>

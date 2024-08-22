@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 변수선언 키워드</title>
+</head>
+<body>
+    
+    <script>
+
+        //ECMAScript6(2015년 발표 버전 : ex6버전 or es2015버전이라고도부름)의 새로운 문법 등장!!!
+
+        //1.변수 선언 키워드 추가 : let, const (자바로따지면 var과 val)
+
+        //기존의 var변수
+        var a=10
+        document.write(a+"<br>")
+
+        var a=20
+        document.write(a+"<br>")
+
+        //새로운 let변수
+        let b=100
+        document.write(b)
+
+         b= 200
+        document.write(b+"<br>") //ERROR - 치명적 에러 fatal에러 .문법적에러. exeption은 실행하다가 안되는거고.. 
+
+        //새로운 const변수: 상수화된 변수
+        const c = 1000
+        document.write(c)
+        //c=2000
+        //document.write(c) //치명적 에러는 아님. 예외상황 Exeption
+
+        //const c= 2000 //문법 에러.치명적에러
+
+        //즉!!!!!!개선사항 :  같은이름의 변수를 만드는 실수를방지할수있음. 빨간줄뜨니까. 상수화된변수const도 생겼당
+
+        //또 다른 개선사항.. 변수의 인식범위를 개선함.. -> 지역의 의미가 다름..
+        //var키워드는 함수 {}를 지역으로 인식함
+        //let, const 키워드는 {}를 지역으로 인식함  {중괄호} -> if, for, while
+
+        //var 의 지역 범위 알아보기
+        function aaa(){
+            var n=5 //지역변수
+            document.write("<hr>"+n)
+        }
+
+        aaa()
+
+        //document.write(n) //지역변수n을 인식하지못함. [예외발생]
+        if(true){
+            var k=8
+            document.write("<br>"+k)
+        }
+
+        document.write("<br>"+k)  //함수{}가 아닌것은 지역이아니라 잘 나온다. 
+
+        //let, const는 중괄호{}를 다 지역으로!!  오 안헷갈리네이제. 자바코틀린과 똑같네
+        if(true){
+            let p=7
+            document.write(p)
+        }
+        //document.write(p+"<br>") 에러 - 인식못함
+
+        for(var i=0;i<3;i++){
+            document.write('aaa<br>')
+        }
+        document.write('i:'+i+"<br>")
+
+
+        for(let j=0;j<3;j++){
+            document.write('aaa<br>')
+        }
+        document.write('j:'+j+"<br>")//예외발생 
+
+        
+    </script>
+</body>
+</html>
